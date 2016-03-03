@@ -1,0 +1,10 @@
+<table>
+  <tbody>
+  <tr>
+    <th>Force Time Entries for the Following Trackers:</th>
+    <td>
+      <%= select_tag("settings[force_update_time_tracker]", options_from_collection_for_select(Tracker.all, 'id', 'name', settings["force_update_time_tracker"]), :multiple => true, :size => 5) %>
+    </td>
+  </tr>
+  </tbody>
+</table>
