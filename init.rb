@@ -24,16 +24,11 @@ module IssuePatch
         has_error = false
 
         selected_trackers = Setting['plugin_force_update_time']['force_update_time_tracker']
-	                               
-# 	log = Logger.new('log/mylog.log')        
-# 	log.info 'INCLUDES'    
-# 	log.info  selected_trackers.include?("3")                                 
-	                                
+                          	                                
         if selected_trackers.include?(self.tracker.id.to_s)
           if !self.time_entries.empty?
             if !self.time_entries.where('created_on > ?', 1.minute.ago).exists?
-	            
- 	  		  log.info 'HAS ERROR' 	            
+	            	            
 	            
               has_error = true
             end
